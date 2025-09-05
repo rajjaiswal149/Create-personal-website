@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Raj Jaiswal | Web Developer</title>
+  <meta name="description" content="Raj Jaiswal — Web Developer. Portfolio showcasing projects, skills, and contact information." />
+  <meta name="keywords" content="Raj Jaiswal, web developer, portfolio, frontend developer, JavaScript, HTML, CSS" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1: #0f172a; /* dark */
+      --bg2: #0b1220;
+      --card: rgba(255,255,255,0.04);
+      --glass: rgba(255,255,255,0.06);
+      --accent: linear-gradient(90deg,#7c3aed,#06b6d4);
+      --text: #e6eef8;
+      --muted: #9fb0c8;
+      --glass-border: rgba(255,255,255,0.06);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:11px;padding:10px;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--text);
+      background: radial-gradient(600px 300px at 10% 10%, rgba(124,58,237,0.14), transparent),
+                  radial-gradient(600px 300px at 90% 90%, rgba(6,182,212,0.08), transparent),
+                  linear-gradient(180deg,var(--bg1),var(--bg2));
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+    .container{max-width:1100px;margin:40px auto;padding:28px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:50px;height:50px;border-radius:12px;background:var(--glass);display:flex;align-items:center;justify-content:center;border:1px solid var(--glass-border);box-shadow:0 6px 30px rgba(2,6,23,0.6)}
+    .brand h1{margin:0;font-size:18px;letter-spacing:0.3px}
+    nav{display:flex;gap:12px}
+    nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:10px;font-weight:600}
+    nav a:hover{background:rgba(255,255,255,0.03);color:var(--text)}
+    .theme-toggle{background:transparent;border:1px solid var(--glass-border);padding:8px;border-radius:10px;cursor:pointer}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center;margin-top:28px}
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:28px;border-radius:18px;border:1px solid var(--glass-border);box-shadow:0 10px 40px rgba(2,6,23,0.6)}
+    .intro{font-size:14px;color:var(--muted);margin-bottom:8px}
+    .name{font-size:34px;margin:0 0 6px 0;line-height:1}
+    .tagline{margin:0;color:var(--muted);font-weight:500}
+    .actions{margin-top:18px;display:flex;gap:12px}
+    .btn{padding:10px 14px;border-radius:12px;border:none;cursor:pointer;font-weight:700}
+    .btn-primary{background:var(--accent);color:white}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)}
+
+    .profile{display:flex;flex-direction:column;align-items:center;gap:12px}
+    .avatar{width:260px;height:260px;border-radius:50%;overflow:hidden;border:6px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px)}
+    .avatar img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+    .avatar:hover img{transform:scale(1.06)}
+    .socials{display:flex;gap:10px}
+    .socials a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:10px;background:rgba(255,255,255,0.03);text-decoration:none;color:var(--text);border:1px solid rgba(255,255,255,0.03)}
+
+    /* Sections */
+    section{margin-top:28px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--card);padding:18px;border-radius:14px;border:1px solid var(--glass-border)}
+    .skills .skill{margin-bottom:10px}
+    .skill-bar{height:10px;background:rgba(255,255,255,0.04);border-radius:10px;overflow:hidden}
+    .skill-fill{height:100%;width:0;transition:width 1s cubic-bezier(.2,.9,.3,1);background:var(--accent)}
+
+    .portfolio{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .project{display:flex;gap:12px;align-items:flex-start}
+    .project img{width:120px;height:80px;border-radius:8px;object-fit:cover}
+
+    footer{margin:32px 0;text-align:center;color:var(--muted);font-size:13px}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .avatar{width:200px;height:200px}
+      .grid-3{grid-template-columns:1fr}
+      .portfolio{grid-template-columns:1fr}
+    }
+
+    /* Simple entrance animations */
+    .fade-up{opacity:0;transform:translateY(12px);animation:fadeUp .9s forwards}
+    @keyframes fadeUp{to{opacity:1;transform:none}}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        
+        <div>
+          <h1>Raj Jaiswal</h1>
+
+          <div style="font-size:12px;color:var(--muted)">Web Developer • Frontend Engineer</div>
+        </div>
+      </div>
+
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+        <button class="theme-toggle" id="themeToggle" title="Toggle theme">🌙</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-card fade-up">
+          <p class="intro">Hi, I'm</p>
+          <h2 class="name">Raj Jaiswal<span style="background:linear-gradient(90deg,#7c3aed,#06b6d4);-webkit-background-clip:text;background-clip:text;color:transparent"> — Web Developer</span></h2>
+          <p class="tagline">I build fast, accessible, and beautiful websites using HTML, CSS & JavaScript. I love creating smooth experiences and clean code.</p>
+
+          <div class="actions">
+            <a href="#portfolio" class="btn btn-primary">See my work</a>
+            <a href="#contact" class="btn btn-ghost">Hire me</a>
+          </div>
+
+          <div style="margin-top:20px;display:flex;gap:16px;flex-wrap:wrap">
+            <div class="card" style="flex:1;min-width:180px">
+              <div style="font-size:12px;color:var(--muted)">Location</div>
+              <div style="font-weight:700">India</div>
+            </div>
+            <div class="card" style="flex:1;min-width:180px">
+              <div style="font-size:12px;color:var(--muted)">Experience</div>
+              <div style="font-weight:700">Frontend Developer</div>
+            </div>
+          </div>
+
+        </div>
+
+        <aside class="profile fade-up" style="animation-delay:.15s">
+          <div class="avatar" role="img" aria-label="Profile photo">
+            <!-- Replace profile.jpg with your photo (square) -->
+            <img src="123.png" alt="Raj Jaiswal">
+          </div>
+
+          <div style="text-align:center">
+            <div style="font-weight:700">Raj Jaiswal</div>
+            <div style="color:var(--muted);font-size:13px">Frontend • UI • JavaScript</div>
+          </div>
+
+          <div class="socials">
+            <a href="#" title="GitHub" aria-label="GitHub">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.58 2 12.17c0 4.5 2.87 8.32 6.84 9.67.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.62-3.37-1.34-3.37-1.34-.45-1.17-1.1-1.48-1.1-1.48-.9-.63.07-.62.07-.62 1 0 1.53 1.04 1.53 1.04.89 1.56 2.34 1.11 2.9.85.09-.66.35-1.11.64-1.37-2.22-.26-4.56-1.13-4.56-5.03 0-1.11.39-2.01 1.03-2.72-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.03A9.4 9.4 0 0112 6.8c.85.004 1.71.11 2.51.32 1.9-1.3 2.74-1.03 2.74-1.03.56 1.41.21 2.45.11 2.71.64.71 1.03 1.61 1.03 2.72 0 3.92-2.35 4.76-4.59 5.01.36.31.68.93.68 1.88 0 1.36-.01 2.46-.01 2.79 0 .27.18.58.69.48A10.2 10.2 0 0022 12.17C22 6.58 17.52 2 12 2z" fill="currentColor"/></svg>
+            </a>
+            <a href="#" title="LinkedIn" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6.94 6.5a1.8 1.8 0 1 1 0-3.6 1.8 1.8 0 0 1 0 3.6zM4.75 8.5h4.28v11H4.75v-11zM12.5 8.5h4.1v1.5h.06c.57-1.08 1.97-2.22 4.05-2.22 4.33 0 5.12 2.85 5.12 6.55v6.2h-4.28v-5.5c0-1.31-.03-3-1.82-3-1.82 0-2.1 1.43-2.1 2.9v5.6h-4.29v-11z" fill="currentColor"/></svg>
+            </a>
+            <a href="#" title="Twitter" aria-label="Twitter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22 5.92c-.63.3-1.3.52-2.01.62.72-.43 1.27-1.12 1.53-1.94-.68.41-1.44.7-2.25.86A3.58 3.58 0 0016.85 4c-1.98 0-3.58 1.67-3.13 3.68C8.82 7.47 6.1 5.6 3.75 3.07c-.86 1.5-.42 3.47 1.05 4.45-.53-.02-1.04-.16-1.48-.4 0 1.5 1.05 2.88 2.6 3.18-.51.14-1.04.17-1.58.06.45 1.45 1.76 2.5 3.31 2.53A7.2 7.2 0 012 18.4 10.07 10.07 0 008.48 20c6.05 0 9.36-5.32 9.36-9.94v-.46c.66-.49 1.23-1.12 1.68-1.78-.6.28-1.24.48-1.91.56z" fill="currentColor"/></svg>
+            </a>
+          </div>
+        </aside>
+      </section>
+
+      <section id="about" class="fade-up">
+        <h3>About</h3>
+        <div class="card" style="margin-top:12px">
+          <p style="margin:0;color:var(--muted)">Hello! I'm Raj — a frontend developer focused on building accessible, high-performance web apps. I love clean UI, component-driven design, and fast interactions.</p>
+          <div style="display:flex;gap:14px;margin-top:14px;flex-wrap:wrap">
+            <div style="min-width:220px">
+              <div style="font-size:12px;color:var(--muted)">Primary</div>
+              <div style="font-weight:700">HTML • CSS • JavaScript • React</div>
+            </div>
+            <div style="min-width:220px">
+              <div style="font-size:12px;color:var(--muted)">Tools</div>
+              <div style="font-weight:700">VSCode • Git • Chrome DevTools • Figma</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-3" style="margin-top:16px">
+          <div class="card skills">
+            <h4 style="margin-top:0">Skills</h4>
+            <div class="skill"><div style="font-size:13px">HTML</div><div class="skill-bar"><div class="skill-fill" data-width="95%"></div></div></div>
+            <div class="skill"><div style="font-size:13px">CSS</div><div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div></div>
+            <div class="skill"><div style="font-size:13px">JavaScript</div><div class="skill-bar"><div class="skill-fill" data-width="88%"></div></div></div>
+            <div class="skill"><div style="font-size:13px">React</div><div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div></div>
+          </div>
+
+          <div class="card">
+            <h4 style="margin-top:0">Education</h4>
+            <p style="margin:0;color:var(--muted)">B.Sc. / Computer Science (Delhi University)</p>
+          </div>
+
+          <div class="card">
+            <h4 style="margin-top:0">Interests</h4>
+            <p style="margin:0;color:var(--muted)">UI Animation, Performance, Games, Teaching</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="portfolio" class="fade-up">
+        <h3 style="margin-bottom:12px">Portfolio</h3>
+        <div class="portfolio">
+          <div class="project card">
+            <img src="proj1.jpg" alt="Project 1">
+            <div>
+              <div style="font-weight:700">Project Title 1</div>
+              <div style="color:var(--muted);font-size:13px">Short description of the project. Tech: React, Tailwind.</div>
+            </div>
+          </div>
+
+          <div class="project card">
+            <img src="proj2.jpg" alt="Project 2">
+            <div>
+              <div style="font-weight:700">Project Title 2</div>
+              <div style="color:var(--muted);font-size:13px">Short description of the project. Tech: HTML, CSS, JavaScript.</div>
+            </div>
+          </div>
+
+          <div class="project card">
+            <img src="proj3.jpg" alt="Project 3">
+            <div>
+              <div style="font-weight:700">Project Title 3</div>
+              <div style="color:var(--muted);font-size:13px">Short description of the project.</div>
+            </div>
+          </div>
+
+          <div class="project card">
+            <img src="proj4.jpg" alt="Project 4">
+            <div>
+              <div style="font-weight:700">Project Title 4</div>
+              <div style="color:var(--muted);font-size:13px">Short description of the project.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="fade-up">
+        <h3>Contact</h3>
+        <div class="card" style="margin-top:12px;display:flex;gap:14px;flex-wrap:wrap">
+          <div style="flex:1;min-width:260px">
+            <form id="contactForm">
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <input name="name" placeholder="Your name" required style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text)" />
+                <input name="email" placeholder="you@example.com" type="email" required style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text)" />
+                <textarea name="message" placeholder="Message" rows="5" required style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text)"></textarea>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+              </div>
+            </form>
+            <div id="formNotice" style="margin-top:10px;color:var(--muted);font-size:13px"></div>
+          </div>
+
+          <div style="min-width:260px">
+            <div style="font-weight:700">Email</div>
+            <div style="color:var(--muted);margin-bottom:12px">youremail@example.com</div>
+            <div style="font-weight:700">Phone</div>
+            <div style="color:var(--muted);margin-bottom:12px">+91 98765 43210</div>
+            <div style="font-weight:700">Location</div>
+            <div style="color:var(--muted)">Your City, India</div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      © <span id="year"></span> Raj Jaiswal — Built with ❤️ • <span style="color:var(--muted)">Lightweight, responsive & AdSense-friendly</span>
+    </footer>
+  </div>
+
+  <script>
+    // Fill year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Animate skill bars
+    window.addEventListener('load', ()=>{
+      document.querySelectorAll('.skill-fill').forEach(el=>{
+        const w = el.getAttribute('data-width') || '70%';
+        setTimeout(()=> el.style.width = w, 250);
+      });
+      // fade up elements
+      document.querySelectorAll('.fade-up').forEach((el,i)=> el.style.animationDelay = (i*120)+'ms');
+    });
+
+    // Theme toggle (simple light mode)
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', ()=>{
+      if(document.documentElement.style.getPropertyValue('--bg1') === '#0f172a'){
+        // switch to light
+        document.documentElement.style.setProperty('--bg1','#f8fafc');
+        document.documentElement.style.setProperty('--bg2','#eef2ff');
+        document.documentElement.style.setProperty('--card','rgba(2,6,23,0.03)');
+        document.documentElement.style.setProperty('--text','#061024');
+        document.documentElement.style.setProperty('--muted','#334155');
+        themeToggle.textContent = '☀️';
+      } else {
+        // dark
+        document.documentElement.style.setProperty('--bg1','#0f172a');
+        document.documentElement.style.setProperty('--bg2','#0b1220');
+        document.documentElement.style.setProperty('--card','rgba(255,255,255,0.04)');
+        document.documentElement.style.setProperty('--text','#e6eef8');
+        document.documentElement.style.setProperty('--muted','#9fb0c8');
+        themeToggle.textContent = '🌙';
+      }
+    });
+
+    // Simple client-side form handler (replace with your backend or Formspree)
+    const form = document.getElementById('contactForm');
+    const notice = document.getElementById('formNotice');
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const data = new FormData(form);
+      // For demo: just show a success message. Integrate with email service or backend.
+      notice.textContent = 'Thanks, your message was received (demo). Replace this with an API call to send real emails.';
+      form.reset();
+    });
+  </script>
+</body>
+</html>
